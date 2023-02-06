@@ -1,30 +1,35 @@
 import java.util.Scanner;
+import java.util.Locale;
 
 public class App {
     public static void main(String[] args) throws Exception {
+        try{
         Scanner sc = new Scanner(System.in);
-        System.out.println("Digite os numeros:");
-        double n1 = Double.parseDouble(sc.nextLine());
-        double n2 = Double.parseDouble(sc.nextLine());
+        String product1 = "Computer";
+        String product2 = "Office Desk";
 
-        System.out.print("Digite o tipo de operação(Multiplicar, Dividir, Somar, Subtrair):");
-        String art = sc.nextLine();
+        int age = 30;
+        int code = 5290;
+        char gender = 'F';
 
-        if(art.equals("Multiplicar")){
-            double total = n1 * n2;
-            System.out.println(total);
-        }
-        else if(art.equals("Dividir")){
-            double total = n1 / n2;
-            System.out.println(total);
-        }
-        else if(art.equals("Subtrair")){
-            double total = n1 - n2;
-            System.out.println(total);
-        }
-        else{
-            double total = n1 + n2;
-            System.out.println(total);
-        }
+        double price1 = 2100.0;
+        double price2 = 650.50;
+        double measure = 53.234567;
+
+        
+
+        System.out.println("Products:");
+        System.out.printf("%s, which price is $%.2f%n",product1,price1);
+        System.out.printf("%s, which price is $ %.2f%n",product2,price2);
+        System.out.printf("Record: %d years old. code %d and gender %s%n", age,code,gender);
+        System.out.printf("Meansue with eight decimal places: %.8f%n", measure);
+        System.out.printf("Meansue with three decimal places: %.3f%n", measure);
+        Locale.setDefault(Locale.US);
+        System.out.printf("US decimal point: %.3f", measure);
+        sc.close();
+    }
+    catch(Exception exception){
+        System.out.println(exception.getMessage());
+    }
     }
 }
